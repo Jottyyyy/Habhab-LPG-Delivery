@@ -1,0 +1,25 @@
+# deps
+/node_modules
+
+# env & secrets (never commit)
+.env*
+!.env.example
+*.keystore
+*.jks
+app/android/key.properties
+
+# vercel
+.vercel
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+*.tsbuildinfo
+
+# Handover files (APK, client message) — local only
+/dist/
+*.apk

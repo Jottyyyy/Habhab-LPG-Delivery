@@ -1,0 +1,8 @@
+# Not needed by the deployment (API + download page only).
+/app
+/brand
+/docs
+/tools/qa
+/tests
+.env*
+!.env.example
