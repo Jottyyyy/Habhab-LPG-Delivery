@@ -95,7 +95,9 @@ export async function handle(req: Request): Promise<Response> {
     const url = new URL(req.url);
     let pathname = url.pathname;
     // vercel.json rewrites /api/<path> to /api/router?path=<path>; the function may see either form.
-    if (pathname === "/api/router" && url.searchParams.has("path")) pathname = `/api/${url.searchParams.get("path")}`;
+    if ((pathname === "/api/router" || !pathname.startsWith("/api/")) && url.searchParams.has("path")) {
+      pathname = `/api/${url.searchParams.get("path")}`;
+    }
     pathname = pathname.replace(/\/+$/, "") || "/";
     const method = req.method.toUpperCase();
 
