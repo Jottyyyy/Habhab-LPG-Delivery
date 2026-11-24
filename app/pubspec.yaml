@@ -1,0 +1,62 @@
+name: habhab_lpg
+description: "Habhab LPG - order gasul, track delivery, listahan"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: ^5.11.1
+  flutter_secure_storage: ^11.2.0
+  shared_preferences: ^2.5.6
+  go_router: ^18.1.4
+  intl: ^0.20.3
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+  geolocator: ^14.0.1
+  url_launcher: ^6.3.3
+  image_picker: ^1.2.4
+  share_plus: ^13.3.1
+  wakelock_plus: ^1.8.2
+  audioplayers: ^6.8.1
+  package_info_plus: ^10.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/brand/
+    - assets/sounds/
+
+# Launcher icon from the Habhab logo (npm run icons, then: dart run flutter_launcher_icons)
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "../brand/icon-1024.png"
+  adaptive_icon_background: "#003F6A"
+  adaptive_icon_foreground: "../brand/icon-foreground.png"
+  min_sdk_android: 24
+
+# Splash while the app starts (dart run flutter_native_splash:create)
+flutter_native_splash:
+  color: "#F8F6EE"
+  image: assets/brand/badge.png
+  android_12:
+    color: "#003F6A"
+    image: ../brand/icon-foreground.png
+    icon_background_color: "#003F6A"
+  ios: false
+  web: false

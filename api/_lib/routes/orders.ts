@@ -295,6 +295,8 @@ export async function deliverOrder(req: Request, params: Record<string, string>)
         note: `Paid on delivery of ${o.ref}`,
         reviewedBy: s.userId,
         reviewedAt: now,
+        // Same moment as the delivery, so the listahan lists the order first, then the payment.
+        createdAt: now,
         createdBy: s.userId,
         device: "Phone",
       });

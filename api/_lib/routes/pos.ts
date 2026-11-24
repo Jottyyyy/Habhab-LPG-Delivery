@@ -70,6 +70,7 @@ export async function posSale(req: Request): Promise<Response> {
         note: `Store sale ${ref}`,
         reviewedBy: s.userId,
         reviewedAt: now,
+        createdAt: now,
         createdBy: s.userId,
         device: "Phone",
       });

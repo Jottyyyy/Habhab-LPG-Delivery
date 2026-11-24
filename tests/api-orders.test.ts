@@ -60,6 +60,11 @@ describe("customer order → delivery", () => {
 
     const ledger = await call("GET", "/me/ledger", { token: cust });
     expect(ledger.body.balance).toBe(0);
+    // Order first, then the cash paid for it (never a negative balance in between).
+    expect(ledger.body.entries.map((e: any) => [e.kind, e.balance])).toEqual([
+      ["order", 192000],
+      ["payment", 0],
+    ]);
   });
 
   it("refuses utang unless the owner allows it, and keeps the credit limit", async () => {
